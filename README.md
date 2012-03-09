@@ -3,9 +3,7 @@
 "r y bl t rd ths shrt phrs?" (Are you able to read this short phrase?)  
 If not improve that!
 
-Grab that link to you bookmarks toolbar. Visit a text heavy site (e.g. [Wikipedia](http://en.wikipedia.org/)) and click that bookmark! Have fun reading.	
-
-<a href="javascript:(function(){var%20head=document.getElementsByTagName('head')[0],script=document.createElement('script');script.type='text/javascript';script.src='https://raw.github.com/arolle/vowel-less.js/master/vowel-less.js?'+Math.floor(Math.random()*99999);head.appendChild(script);})();void(0)/*github.com/arolle*/" style="border:1px solid #CCC;background-color:#FFD;padding:.5em;margin:0.5em;border-radius:20px;font-weight:bold;display:inline;text-align:center;">no&nbsp;vowels</a>
+Get the bookmarklet on the project page: [arolle.github.com/vowel-less.js/](http://arolle.github.com/vowel-less.js/)
 
 The bookmarklet calls the `vowel-less.js` javascript file. That removes all vowels (and vowel like) characters from an HTML document.
 
