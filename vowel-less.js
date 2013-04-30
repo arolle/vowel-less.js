@@ -7,17 +7,46 @@ all vowels from a website. With a little exercise, can you still read that websi
 /* removes any kind of vowels (and umlauts) from a string */
 function removeVowels(text) {
 	var text = text + '',// cast to string
-		parts = text.split(/\s+/);
+		parts = text.split(/(\w+)/);
 	parts.forEach(
 		function (val, i) {
+			if (val.length < 2 || val.match(/[^\w]/)) {return;}
 			var newText = val.replace(/[aeiouäåáâàéêèìöòüù]+/ig,'');
 			if (newText.length > 0) {// replace if text won’t disappear
 				parts[i] = newText;
 			};
 		}
 	);
-	return parts.join(' ');
+	return parts.join("");
 }
+/*
+ * implementing:
+ * http://www.mrc-cbu.cam.ac.uk/people/matt.davis/cmabridge/
+ */
+function shuffleLettersInWord(text) {
+	var text = text + '',// cast to string
+		parts = text.split(/(\w+)/);
+	parts.forEach(
+		function (val, i) {
+			if (val.length < 4 || val.match(/[^\w]/)) {return;}
+			parts[i] = val.charAt(0)
+				+ val.substring(1,val.length-1).split("")
+					.sort(
+						function(){
+							return (Math.round(Math.random())-0.5);
+						}
+					).join("")
+				+ val.charAt(val.length-1);
+		}
+	);
+	return parts.join("");
+}
+/**
+ * TODO implement
+ * http://xkcd.com/1031/
+ * 
+ */
+
 
 /*
 findAndReplace() is a modified copy of
@@ -57,7 +86,17 @@ function findAndReplace(callback, searchNode) {
 		parent.removeChild(currentNode);
 	}
 }
-
-/* finally apply that function (to document.body) */
-findAndReplace(removeVowels);
-void(document.title = removeVowels(document.title));
+function bookmarklet(val)
+{
+	var callback = null;
+	switch(val){
+		case "no vowels": callback = removeVowels; break;
+		case "shake letters": callback = shuffleLettersInWord; break;
+		default: break;
+	}
+	console.log(typeof callback);
+	if (typeof callback == "function"){
+		findAndReplace(callback);
+		document.title = callback(document.title);
+	}
+}

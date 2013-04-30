@@ -2,14 +2,19 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>vowel-less.js</title>
+	<title>read that site. linguistic playground</title>
+	<script src="vowel-less.js"></script>
 </head>
-<body style="margin:0 auto;width:33em">
-	<h1>vowel-less.js</h1>
-	<p>Grab that link to you bookmarks toolbar. Visit a text heavy site (e.g. <a href="http://en.wikipedia.org/">Wikipedia</a>) and click that bookmark! Have fun reading.</p>	
+<body style="margin:0 auto;width:33em;">
+	<h1>read that site. linguistic playground</h1>
+	<p>Grab the links to you bookmarks toolbar. Visit a text heavy site (e.g. <a href="http://en.wikipedia.org/">Wikipedia</a>) and click that bookmark! Have fun reading.</p>
 
-	<p>Bookmarklet: <a href="javascript:(function(){var%20head=document.getElementsByTagName('head')[0],script=document.createElement('script');script.type='text/javascript';script.src='http://arolle.github.com/vowel-less.js/vowel-less.js?'+Math.floor(Math.random()*99999);head.appendChild(script);})();void(0)" style="border:1px solid #CCC;background-color:#FFD;padding:.5em;margin:0.5em;border-radius:20px;font-weight:bold;display:inline;text-align:center;">no vowels</a></p>
+<dl>
+	<dt>Bookmarklets</dt>
+	<dd><a href="javascript:(function(){var%20h=document.getElementsByTagName('head')[0],s=document.createElement('script');s.type='text/javascript';s.src='http://arolle.github.com/vowel-less.js/vowel-less.js?'+Math.floor(Math.random()*99999);h.appendChild(s);})();bookmarklet('no%20vowels')">no vowels</a></dd>
+	<dd><a href="javascript:(function(){var%20h=document.getElementsByTagName('head')[0],s=document.createElement('script');s.type='text/javascript';s.src='http://arolle.github.com/vowel-less.js/vowel-less.js?'+Math.floor(Math.random()*99999);h.appendChild(s);})();bookmarklet('shake%20letters')">shake letters</a></dd>
+</dl>
 	
-	<p><a href="https://github.com/arolle/vowel-less.js/">see the source code</a></p>
+	<p>browse the <a href="https://github.com/arolle/vowel-less.js/">source on github</a></p>
 </body>
 </html>
